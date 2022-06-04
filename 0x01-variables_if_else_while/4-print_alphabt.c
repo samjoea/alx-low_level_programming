@@ -9,27 +9,40 @@
  */
 int main(void)
 {
-	char lwcase[28];
-	char ltr;
+	int lwcase[26];
+	int ltr;
 	int i;
 
 	int putchar(int lwcase);
 
-	lwcase[27] = '\0';
+	lwcase[25] = '\0';
 	
-	lwcase[26] = 10;
+	lwcase[24] = 10;
 
+	i = 0;
 	ltr = 'a';
 
-	for (i = 0; i <= 26; i++)
+	while (i <= 24)
 	{
-		if (i < 26)
-			lwcase[i] = ltr++;
 
-		if (lwcase[i] == 'e' || lwcase[i] == 'q')
-			lwcase[i] = '\0';
+		if (ltr == 'e' || ltr == 'q')
+			lwcase[i] = ++ltr;
+
+		else if (i < 24)
+		{
+			lwcase[i] = ltr;
+		}
+
+		else
+			i = 24;
 
 		putchar(lwcase[i]);
+
+		i++;
+
+		ltr++;
+
 	}
+
 	return (0);
 }

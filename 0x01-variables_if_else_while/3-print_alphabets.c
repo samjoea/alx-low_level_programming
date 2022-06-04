@@ -25,7 +25,7 @@ int main(void)
 
 	for (i = 0; i < 27; i++)
 	{
-		if(i == 26)
+		if (i == 26)
 			upcase[i] = 10;
 
 		else

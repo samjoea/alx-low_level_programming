@@ -22,7 +22,7 @@ int main(void)
 
 	ltr = 'z';
 
-	for (i = 0; i <= 27; i++)
+	for (i = 0; i < 27; i++)
 	{
 		if (i < 26)
 			lwcase[i] = ltr;

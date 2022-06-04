@@ -11,7 +11,7 @@ int main(void)
 {
 	int lwcase[12];
 	int i;
-	char num;
+	int num;
 
 	int putchar(int lwcase);
 
@@ -21,7 +21,7 @@ int main(void)
 
 	num = '0';
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i <= 10; i++)
 	{
 		if (i < 10)
 			lwcase[i] = num + i;

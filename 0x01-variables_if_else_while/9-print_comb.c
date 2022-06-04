@@ -13,7 +13,7 @@ int main(void)
 	int coma = 44;
 	int space = ' ';
 	int num[12];
-	char ltr;
+	int ltr;
 
 	int putchar(int hex);
 
