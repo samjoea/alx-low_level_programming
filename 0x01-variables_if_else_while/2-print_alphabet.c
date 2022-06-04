@@ -11,7 +11,7 @@ int main(void)
 {
 	char lwcase;
 
-	int putchar(int lwcase);
+	//int putchar(int lwcase);
 
 	for (lwcase = 'a'; lwcase <= 'z'; lwcase++)
 		putchar(lwcase);
