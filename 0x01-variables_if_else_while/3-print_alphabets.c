@@ -10,16 +10,29 @@
 int main(void)
 {
 	char lwcase;
+	char ltr = 'A';
 
-	int putchar(int lwcase);
+	char upcase[27];
+
+	int putchar(int upcase);
+
+	int i;
+
+	upcase[27] = '\0';
 
 	for (lwcase = 'a'; lwcase <= 'z'; lwcase++)
-	{
-		if (lwcase < 'e' || (lwcase > 'e' && lwcase < 'q') || lwcase > 'q')
-			putchar(lwcase);
-	}
+		putchar(lwcase);
 
-	putchar(10);
+	for (i = 0; i < 27; i++)
+	{
+		if(i == 26)
+			upcase[i] = 10;
+
+		else
+			upcase[i] = ltr++;
+
+		putchar(upcase[i]);
+	}
 
 	return (0);
 }
