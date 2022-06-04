@@ -21,7 +21,7 @@ int main(void)
 
 	if (lstdgt > 5)
 
-		printf("%d and is greater 5\n", lstdgt);
+		printf("%d and is greater than 5\n", lstdgt);
 
 	else if (lstdgt == 0)
 
