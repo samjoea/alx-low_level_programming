@@ -9,16 +9,28 @@
  */
 int main(void)
 {
-	char lwcase;
+	int lwcase[28];
 
 	int putchar(int lwcase);
 
-	for (lwcase = 'z'; lwcase >= 'a'; lwcase--)
-	{
-		putchar(lwcase);
-	}
+	int i;
+	char ltr;
 
-	putchar(10);
+	lwcase[26] = 10;
+
+	lwcase[27] = '\0';
+
+	ltr = 'z';
+
+	for (i = 0; i <= 27; i++)
+	{
+		if (i < 26)
+			lwcase[i] = ltr;
+
+		putchar(lwcase[i]);
+
+		ltr--;
+	}
 
 	return (0);
 }

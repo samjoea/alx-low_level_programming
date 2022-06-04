@@ -12,22 +12,32 @@ int main(void)
 	int i;
 	int coma = 44;
 	int space = ' ';
-	int nxtln = 10;
+	int num[12];
+	char ltr;
 
 	int putchar(int hex);
 
-	for (i = '0'; i <= '9'; i++)
-	{
-		putchar(i);
+	num[10] = 10;
 
-		if (i < '9')
+	num[11] = '\0';
+
+	ltr = '0';
+
+	for (i = 0; i <= 10; i++)
+	{
+		if (i  < 10)
+		{
+			num[i] = ltr++;
+		}
+
+		putchar(num[i]);
+
+		if (i < 9)
 		{
 			putchar(coma);
 			putchar(space);
 		}
 	}
-
-	putchar(nxtln);
 
 	return (0);
 }

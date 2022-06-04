@@ -9,16 +9,25 @@
  */
 int main(void)
 {
-	int lwcase;
+	int lwcase[12];
+	int i;
+	char num;
 
 	int putchar(int lwcase);
 
-	for (lwcase = '0'; lwcase <= '9'; lwcase++)
-	{
-		putchar(lwcase);
-	}
+	lwcase[10] = 10;
+	
+	lwcase[11] = '\0';
 
-	putchar(10);
+	num = '0';
+
+	for (i = 0; i < 11; i++)
+	{
+		if (i < 10)
+			lwcase[i] = num + i;
+
+		putchar(lwcase[i]);
+	}
 
 	return (0);
 }
