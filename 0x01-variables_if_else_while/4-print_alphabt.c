@@ -16,7 +16,7 @@ int main(void)
 	int putchar(int lwcase);
 
 	lwcase[25] = '\0';
-	
+
 	lwcase[24] = 10;
 
 	i = 0;

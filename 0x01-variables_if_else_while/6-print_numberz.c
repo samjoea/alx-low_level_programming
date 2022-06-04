@@ -16,7 +16,7 @@ int main(void)
 	int putchar(int lwcase);
 
 	lwcase[10] = 10;
-	
+
 	lwcase[11] = '\0';
 
 	num = '0';
