@@ -9,10 +9,8 @@
  */
 int main(void)
 {
-	int i;
-	int x;
-	int a;
-	int tmp[2];
+	int i, x, y, a;
+	int tmp[3];
 
 	int putchar(int i);
 
@@ -22,32 +20,32 @@ int main(void)
 	{
 		for (x = '0'; x <= '9'; x++)
 		{
-			if (i != x && i < x)
+			for (y = '0'; y <= '9'; y++)
 			{
-				tmp[0] = i;
-				tmp[1] = x;
-				a = 0;
-
-				while (a < 2)
+				if ((i != x && i < x && i != y && i < y) && (x != y && x < y))
 				{
-					putchar(tmp[a]);
-					
-					a++;
-				}
+					tmp[0] = i;
+					tmp[1] = x;
+					tmp[2] = y;
+					a = 0;
+					while (a < 3)
+					{
+						putchar(tmp[a]);
+						a++;
+					}
 
-				if (i != '8' && i < x)
-				{
-					putchar(',');
-					putchar(' ');
+					if (i != '8' && i < x && i != '7' && i < y)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-
-				else
-					putchar(10);
 			}
 		}
 
 		i++;
 	}
+	putchar(10);
 
 	return (0);
 }
