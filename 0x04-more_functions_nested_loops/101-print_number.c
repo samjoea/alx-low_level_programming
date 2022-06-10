@@ -9,40 +9,25 @@
 
 void print_number(int n)
 {
-	int a, b;
+	unsigned int a;
 
-	b = n / 10;
-	if (b != 0 && b > 9 && b < 99)
+	a = 1000000000;
+
+	if (n < 0)
 	{
-		a = n / 10;
-		_putchar((a / 10) + '0');
-		_putchar((a % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else if (b != 0 && b > 99)
-	{
-		a = n / 100;
-		_putchar((a / 10) + '0');
-		_putchar((a % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else if (b != 0 && b < 0)
-	{
-		a = n * -1;
+		n *= -1;
 		_putchar('-');
-		_putchar((a / 10) + '0');
-		_putchar((a % 10) + '0');
 	}
-	else if (b != 0 && b > 0)
+	else if (n == 0)
 	{
-		a = n / 10;
-		_putchar(a + '0');
-		_putchar((n % 10) + '0');
-	}
-	else
-	{
-		_putchar(n + '0');
+		_putchar('0');
 	}
 
+	for (; a >= 1; a /= 10)
+	{
+		if ((n / a) != 0)
+		{
+			_putchar((n / a) % 10 + '0');
+		}
+	}
 }
