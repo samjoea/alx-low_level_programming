@@ -24,8 +24,8 @@ void rev_string(char *s)
 		tmp = *(s + j);
 		*(s + j) = *(s + a);
 		*(s + a) = tmp;
-		
+
 		j--;
 		a++;
-	}	
+	}
 }
