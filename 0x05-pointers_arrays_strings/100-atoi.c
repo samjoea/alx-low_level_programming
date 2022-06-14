@@ -9,5 +9,31 @@
 
 int _atoi(char *s)
 {
-	int i;
+	int sign, flag;
+	unsigned int sum;
+
+	sum = 0;
+	sign = 1;
+
+	while (*s)
+	{
+		if (*s == '-')
+			sign *= -1;
+
+		if (*s >= '0' && *s <= '9')
+		{
+			flag = 1;
+			sum = sum * 10 + (*s - '0');
+		}
+
+		else if (flag)
+			break;
+
+		s++;
+	}
+
+	if (sign < 0)
+		sum = -1 * sum;
+
+	return (sum);
 }
