@@ -1,37 +1,37 @@
 #include "main.h"
 /**
- * factors - finds the factors of a number.
+ * prime - finds a prime number.
  * @n: input number.
  * @x: iterator.
- * Return: the factors of n.
+ * Return: 1 if n is prime or 0 if n is not prime.
  */
-int factors(int n, int x)
+int prime(unsigned int n, unsigned int x)
 {
-	if (x % (n / x) == 0)
+	if (n % x == 0)
 	{
-		if (x * (n / x) == n)
-			return (x);
+		if (n == x)
+			return (1);
 		else
-			return (-1);
+			return (0);
 	}
-	return (0 + factors(n, x + 1));
+	return (0 + prime(n, x + 1));
 }
 
 /**
- * _sqrt_recursion - it returns the value of x raised to y
+ * is_prime_number - prints a prime number
  * @n: integer value
  *
- * Return: an integer
+ * Return: 1 if n is prime and 0 if n is not prime.
  */
 
-int _sqrt_recursion(int n)
+int is_prime_number(int n)
 {
 	if (n < 0)
-		return (-1);
+		return (0);
 	else if (n == 0)
 		return (0);
 	else if (n == 1)
-		return (1);
+		return (0);
 
-	return (0 + factors(n, 2));
+	return (0 + prime(n, 2));
 }
