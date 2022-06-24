@@ -9,12 +9,13 @@
 
 int _atoi(char *s)
 {
-	int sign, flag;
+	int sign;
 	unsigned int sum;
+	char flag;
 
+	flag = 0;
 	sum = 0;
 	sign = 1;
-
 	while (*s)
 	{
 		if (*s == '-')
@@ -23,17 +24,14 @@ int _atoi(char *s)
 		if (*s >= '0' && *s <= '9')
 		{
 			flag = 1;
-			sum = sum * 10 + (*s - '0');
+			sum = sum * 10 + *s - '0';
 		}
-
 		else if (flag)
 			break;
-
 		s++;
 	}
-
 	if (sign < 0)
-		sum = -1 * sum;
+		sum = (-sum);
 
 	return (sum);
 }
