@@ -1,45 +1,44 @@
-#include <stdlib.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _realloc - allocate memory and set all values to 0
- * @ptr: pointer to the memory previously allocated (malloc(old_size))
- * @old_size: size previously allocated
- * @new_size: new size to reallocate
- * Return: pointer to reallocated memory
+ * _realloc - a function reallocates a memory block using malloc and free
+ * @ptr: a pointer
+ * @old_size: old size
+ * @new_size: new size
+ * Return: pointer
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *p;
+	char *p, *relloc;
 	unsigned int i;
 
-	if (new_size == 0 && ptr != NULL) /* free memory if reallocate 0 */
+	if (ptr != NULL)
+	p = ptr;
+
+	else
 	{
-		free(ptr);
-		return (NULL);
+		return (malloc(new_size));
 	}
 
-	if (new_size == old_size) /* return ptr if reallocating same old size */
+	if (new_size == old_size)
 		return (ptr);
 
-	if (ptr == NULL) /* malloc new size if ptr is originally null */
+	if (new_size == 0 && ptr != NULL)
 	{
-		p = malloc(new_size);
-		if (p == NULL)
-			return (NULL);
-		else
-			return (p);
+		free(ptr);
+		return (0);
 	}
 
-	p = malloc(new_size); /* malloc and check error */
-	if (p == NULL)
-		return (NULL);
+	relloc = malloc(new_size);
+	if (relloc == NULL)
+		return (0);
 
-	/* fill up values up till minimum of old or new size */
-	for (i = 0; i < old_size && i < new_size; i++)
-		*((char *)p + i) = *((char *)ptr + i);
-	free(ptr); /* free old ptr */
+	for (i = 0; i < (old_size || i < new_size); i++)
+	{
+		*(relloc + i) = p[i];
+	}
 
-	return (p);
+	free(ptr);
+	return (relloc);
 }
