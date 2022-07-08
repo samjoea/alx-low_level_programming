@@ -14,13 +14,13 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int i, total, zero;
 
 	total = 0, zero = 0;
-	if (n == zero)
-		return (0);
 	va_start(var, n);
 
+	if (n == zero)
+		return (0);
 	for (i = 0; i < n; i++)
 		total += va_arg(var, int);
 	va_end(var);
 
-	return ((int)total);
+	return (total);
 }
